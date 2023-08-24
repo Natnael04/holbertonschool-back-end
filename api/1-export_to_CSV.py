@@ -11,19 +11,11 @@ def export_employee_tasks_to_csv(employee_id, employee_name, tasks_data):
     with open(csv_file_path, mode="w", newline="") as file:
         writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 
-        # Write headers
-        headers = ["USER_ID", "USERNAME",
-                   "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-        writer.writerow(headers)
-
         # Write tasks data
         for task in tasks_data:
             task_completed = "True" if task["completed"] else "False"
             writer.writerow([employee_id, employee_name,
                             task_completed, task["title"]])
-
-    print(
-        f"Tasks for employee {employee_name} exported to {csv_file_path} successfully.")
 
 
 def main():
