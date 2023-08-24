@@ -9,7 +9,7 @@ def export_employee_tasks_to_csv(employee_id, employee_name, tasks_data):
     csv_file_path = f"{employee_id}.csv"
 
     with open(csv_file_path, mode="w", newline="") as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 
         # Write headers
         headers = ["USER_ID", "USERNAME",
