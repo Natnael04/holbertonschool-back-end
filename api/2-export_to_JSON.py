@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """program that copeis all tasks in a json file"""
+import json
 import requests
 import sys
-import json
 
 
 def export_employee_tasks_to_json(employee_id, employee_name, tasks_data):
@@ -15,6 +15,7 @@ def export_employee_tasks_to_json(employee_id, employee_name, tasks_data):
             "username": employee_name
         })
 
+    json_data = {employee_id: tasks_for_json}
     json_file_path = f"{employee_id}.json"
 
     with open(json_file_path, mode="w") as file:
