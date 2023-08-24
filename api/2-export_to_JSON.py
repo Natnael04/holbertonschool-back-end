@@ -19,7 +19,7 @@ def export_employee_tasks_to_json(employee_id, employee_name, tasks_data):
     json_file_path = f"{employee_id}.json"
 
     with open(json_file_path, mode="w") as file:
-        json.dump({employee_id: tasks_for_json}, file, indent=4)
+        json.dump(json_data, file, indent=4)
 
     print(
         f"Tasks for employee {employee_name} exported to {json_file_path} successfully.")
